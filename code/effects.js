@@ -211,20 +211,8 @@ function startGame() {
 		//Animations
 
 		//Hunger bar
-		/*if (hungerHpCount <= 0) {
-			mouth.innerHTML = "_";
-		} else if (hungerHpCount < 20) {
-			mouth.innerHTML = "0";
-		} else if (hungerHpCount < 40) {
-			mouth.innerHTML = "O";
-		} else if (hungerHpCount < 60) {
-			mouth.innerHTML = "o";
-		} else if (hungerHpCount < 80) {
-			mouth.innerHTML = "-";
-		} else if (hungerHpCount > 80) {
-			mouth.innerHTML = "▿";
-		}*/
 
+		/*mouth}*/
         switch(true){
             case hungerHpCount <= 0:
                 mouth.innerHTML = "_";
@@ -247,26 +235,40 @@ function startGame() {
         }
 
 		//Sleep bar
-		if (sleepHpCount <= 0) {
-			eyeLeft.innerHTML = "×";
-			eyeRight.innerHTML = "×";
-		} else if (sleepHpCount < 20) {
-			eyeLeft.innerHTML = "◡";
-			eyeRight.innerHTML = "◡";
-			mouth.innerHTML = ".";
-		} else if (sleepHpCount < 40) {
-			eyeLeft.innerHTML = " ´ ";
-			eyeRight.innerHTML = " ` ";
-		} else if (sleepHpCount < 60) {
-			eyeLeft.innerHTML = "●";
-			eyeRight.innerHTML = "●";
-		} else if (sleepHpCount < 80) {
-			eyeLeft.innerHTML = "・";
-			eyeRight.innerHTML = "・";
-		} else if (sleepHpCount > 80) {
-			eyeLeft.innerHTML = "＾";
-			eyeRight.innerHTML = "＾";
-		}
+
+        switch(true){
+            case (sleepHpCount <= 0): 
+                eyeLeft.innerHTML = "×";
+                eyeRight.innerHTML = "×";
+                break;
+            
+            case (sleepHpCount < 20): 
+                eyeLeft.innerHTML = "◡";
+                eyeRight.innerHTML = "◡";
+                mouth.innerHTML = ".";
+                break;
+
+            case (sleepHpCount < 40): 
+                eyeLeft.innerHTML = " ´ ";
+                eyeRight.innerHTML = " ` ";
+                break;
+
+            case (sleepHpCount < 60):
+                eyeLeft.innerHTML = "●";
+                eyeRight.innerHTML = "●";
+                break;
+
+            case (sleepHpCount < 80): 
+                eyeLeft.innerHTML = "・";
+                eyeRight.innerHTML = "・";
+                break;
+            
+            case (sleepHpCount > 80): 
+                eyeLeft.innerHTML = "＾";
+                eyeRight.innerHTML = "＾";
+                break;
+        }
+		
 
 		//Play bar
 		if (playHpCount <= 0) {
