@@ -32,11 +32,28 @@ h3 {
 /*MENU SCREEN*/
 
 .menu {
-  position: absolute;
-  top: 50vh;
-  transform: translateY(-50%);
-  width: 100%;
-  text-align: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    top: 50vh;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+}
+.menu h1{
+    font-size:60px;
+}
+.menu h3{
+    font-size:50px;
+}
+.menu-buttons{
+    display:flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    font-size:40px;
 }
 
 /*SETTINGS SCREEN*/
@@ -142,7 +159,25 @@ h3 {
   display: inline;
 }
 
+/* RESPONSIVENESS */
+
+@media (max-width: 1100){
+    /*  MENU SCREEN */
+    .menu {
+        top: 40vh;
+      }
+      .menu h1{
+          font-size:45px;
+      }
+      .menu h3{
+          font-size:40px;
+      }
+}
+
 @media (max-width: 860px) {
+  .menu-buttons{
+    flex-direction: column;
+  }  
   .hp {
     font-size: 20px;
   }
@@ -158,16 +193,22 @@ h3 {
 }
 
 @media (max-width: 540px) {
+    .menu-buttons{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
   .hp p {
-    font-size: 20px;
+    font-size: 18px;
     display: block;
   }
   .buttons a, .menu-buttons a, .settings-buttons a {
-    font-size: 20px;
+    font-size: 18px;
     margin: 20px 5px 0px 5px;
   }
   #name {
-    font-size: 20px;
+    font-size: 18px;
   }
   #t-body {
     font-size: 40px;
@@ -176,15 +217,15 @@ h3 {
 
 @media (max-width: 540px) {
   .hp p {
-    font-size: 20px;
+    font-size: 18px;
     display: block;
   }
   .buttons a, .menu-buttons a, .settings-buttons a {
-    font-size: 20px;
+    font-size: 18px;
     margin: 20px 2px 0px 2px;
   }
   #name {
-    font-size: 20px;
+    font-size: 18px;
   }
   #t-body {
     font-size: 30px;
