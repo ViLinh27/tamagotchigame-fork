@@ -211,7 +211,7 @@ function startGame() {
 		//Animations
 
 		//Hunger bar
-		if (hungerHpCount <= 0) {
+		/*if (hungerHpCount <= 0) {
 			mouth.innerHTML = "_";
 		} else if (hungerHpCount < 20) {
 			mouth.innerHTML = "0";
@@ -223,7 +223,28 @@ function startGame() {
 			mouth.innerHTML = "-";
 		} else if (hungerHpCount > 80) {
 			mouth.innerHTML = "▿";
-		}
+		}*/
+
+        switch(true){
+            case hungerHpCount <= 0:
+                mouth.innerHTML = "_";
+                break;
+            case hungerHpCount < 20:
+                mouth.innerHTML = "0";
+                break;
+            case hungerHpCount < 40:
+                mouth.innerHTML = "O";
+                break;
+            case hungerHpCount < 60:
+                mouth.innerHTML = "o";
+                break;
+            case hungerHpCount < 80:
+                mouth.innerHTML = "-";
+                break;
+            case hungerHpCount > 80:
+                mouth.innerHTML = "▿";
+                break;
+        }
 
 		//Sleep bar
 		if (sleepHpCount <= 0) {
