@@ -1,4 +1,9 @@
 //
+//consts for text effects
+var i = 0;
+var titletxt = 'Tamagotchi (version 1.4)';
+var txtspeed = 50;/*in milliseconds */
+
 //Constants for buttons
 const sleepBtn = document.querySelector("#action-sleep");
 const feedBtn = document.querySelector("#action-feed");
@@ -113,6 +118,19 @@ nightModeOffBtn.addEventListener("click", function() {
 nightModeOnBtn.addEventListener("click", function() {
 	nightModeOn();
 });
+
+//title text animation
+document.addEventListener('DOMContentLoaded',function(){
+    typeWriter();
+}, false)
+
+function typeWriter(){
+    if(i < titletxt.length){
+        document.getElementById("menu-game-title").innerHTML += titletxt.charAt(i);
+        i++;
+        setTimeout(typeWriter,txtspeed);
+    }
+}
 
 //NightMode toggle
 function nightModeOn() {
