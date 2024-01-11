@@ -271,36 +271,50 @@ function startGame() {
 		
 
 		//Play bar
-		if (playHpCount <= 0) {
+        switch(true){
+            case (playHpCount <= 0): 
 			effectRight.innerHTML = "   ";
 			effectLeft.innerHTML = "   ";
 			handRight.innerHTML = "╮";
 			handLeft.innerHTML = "╭";
-		} else if (playHpCount < 40) {
-			effectRight.innerHTML = "*  ";
-			effectLeft.innerHTML = "   ";
-			handRight.innerHTML = " ";
-			handLeft.innerHTML = " ";
-		} else if (playHpCount < 60) {
-			effectLeft.innerHTML = "   ";
-			effectRight.innerHTML = "   ";
-			handRight.innerHTML = "╮";
-			handLeft.innerHTML = "╭";
-		} else if (playHpCount < 80) {
-			effectLeft.innerHTML = "  ✧";
-			effectRight.innerHTML = "✧  ";
-			handRight.innerHTML = "╭";
-			handLeft.innerHTML = "╮";
-		} else if (playHpCount < 90) {
-			effectLeft.innerHTML = " ˖✧";
-			effectRight.innerHTML = "✧˖ ";
-			handRight.innerHTML = "/";
-			handLeft.innerHTML = "\\";
-		} else if (playHpCount > 90) {
-			effectLeft.innerHTML = "°˖✧";
-			effectRight.innerHTML = "✧˖°";
-			handRight.innerHTML = "◜";
-			handLeft.innerHTML = "◝";
-		}
+            break;
+
+            case (playHpCount < 40): 
+                effectRight.innerHTML = "*  ";
+                effectLeft.innerHTML = "   ";
+                handRight.innerHTML = " ";
+                handLeft.innerHTML = " ";
+                break;
+            
+            case (playHpCount < 60): 
+                effectLeft.innerHTML = "   ";
+                effectRight.innerHTML = "   ";
+                handRight.innerHTML = "╮";
+                handLeft.innerHTML = "╭";
+                break;
+            
+            case (playHpCount < 80): 
+                effectLeft.innerHTML = "  ✧";
+                effectRight.innerHTML = "✧  ";
+                handRight.innerHTML = "╭";
+                handLeft.innerHTML = "╮";
+                break;
+            
+            case (playHpCount < 90): 
+                effectLeft.innerHTML = " ˖✧";
+                effectRight.innerHTML = "✧˖ ";
+                handRight.innerHTML = "/";
+                handLeft.innerHTML = "\\";
+                break;
+            
+            case (playHpCount > 90): 
+                effectLeft.innerHTML = "°˖✧";
+                effectRight.innerHTML = "✧˖°";
+                handRight.innerHTML = "◜";
+                handLeft.innerHTML = "◝";
+                break;
+            
+        }
+		
 	}
 }
