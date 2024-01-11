@@ -8,6 +8,8 @@ var txtspeed = 50;/*in milliseconds */
 const sleepBtn = document.querySelector("#action-sleep");
 const feedBtn = document.querySelector("#action-feed");
 const playBtn = document.querySelector("#action-play");
+const dirtyBtn = document.querySelector("#action-dirty");
+
 const startBtn = document.querySelector("#action-menu-start-game");
 const settingsBtn = document.querySelector("#action-menu-settings");
 const settingsBackBtn = document.querySelector("#action-settings-back");
@@ -21,6 +23,8 @@ const nightModeOnBtn = document.querySelector("#nightmode-on");
 const sleepHp = document.querySelector("#sleep-hp");
 const hungerHp = document.querySelector("#hunger-hp");
 const playHp = document.querySelector("#play-hp");
+const dirtyHp = document.querySelector("#dirty-hp");
+
 const scoreBar = document.querySelector("#score");
 //
 //Constants for body
@@ -36,6 +40,8 @@ const mouth = document.querySelector("#mouth");
 const maxSleep = 300;
 const maxHunger = 300;
 const maxPlay = 300;
+const minDirty = 0;
+
 //Game speed
 let day = 20;
 
@@ -44,6 +50,7 @@ function Tamagotchi() {
   this.sleep = maxSleep;
   this.hunger = maxHunger;
   this.play = maxPlay;
+  this.dirty = minDirty;
 }
 
 //Abilities
@@ -59,16 +66,23 @@ Tamagotchi.prototype.actionPlay = function() {
 	this.play+=80 / (day * 2)
 };
 
+Tamagotchi.prototype.actionDirty = function(){
+    this.dirty-=40 / (day * 2)
+}
+
 Tamagotchi.prototype.tick = function() {
     this.sleep--;
     this.hunger-=3;
     this.play-=2;
+    this.dirty+=2;
 };
 
 let tmgch = new Tamagotchi();
 let sleepHpCount;
 let hungerHpCount;
 let playHpCount;
+let dirtyCount;
+
 let score = 0;
 
 //Controllers
@@ -83,6 +97,10 @@ feedBtn.addEventListener("click", function() {
 playBtn.addEventListener("click", function() {
 	tmgch.actionPlay();
 });
+
+dirtyBtn.addEventListener("click", function(){
+    tmgch.actionDirty();
+})
 
 startBtn.addEventListener("click", function() {
 	startGame();
@@ -179,6 +197,7 @@ function startGame() {
 		sleepHpCount = (tmgch.sleep / maxSleep * 100).toFixed(2);
 		hungerHpCount = (tmgch.hunger / maxHunger * 100).toFixed(2);
 		playHpCount = (tmgch.play / maxPlay * 100).toFixed(2);
+        dirtyHpCount = (tmgch.dirty / maxPlay * 100).toFixed(2);
 
 		//Scores
 		score++;
@@ -222,6 +241,8 @@ function startGame() {
 		sleepHp.innerHTML = sleepHpCount;
 		hungerHp.innerHTML = hungerHpCount;
 		playHp.innerHTML = playHpCount;
+
+        dirtyHp.innerHTML = dirtyHpCount;
 
 		//Remove HP every tick
 		tmgch.tick();
