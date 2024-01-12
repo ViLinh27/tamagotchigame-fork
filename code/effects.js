@@ -35,6 +35,9 @@ const handRight = document.querySelector("#hand-right");
 const eyeLeft = document.querySelector("#eye-left");
 const eyeRight = document.querySelector("#eye-right");
 const mouth = document.querySelector("#mouth");
+const cleanLeft = document.querySelector("#clean-left");
+const cleanRight = document.querySelector("#clean-right");
+
 //
 //Game settings
 const maxSleep = 300;
@@ -353,6 +356,34 @@ function startGame() {
                 handLeft.innerHTML = "◝";
                 break;
             
+        }
+
+        // Cleanliness
+        switch(true){
+            case(dirtyHpCount <=0):
+                cleanLeft.innerHTML = " ";
+                cleanRight.innerHTML = " ";
+                break;
+            case(dirtyHpCount < 15 ):
+                cleanLeft.innerHTML = "~ ";
+                cleanRight.innerHTML = " ~";
+                break;
+            case (dirtyHpCount < 25):
+                cleanLeft.innerHTML = "~~";
+                cleanRight.innerHTML = "~~";
+                break;
+            case (dirtyHpCount < 40):
+                cleanLeft.innerHTML = "x~";
+                cleanRight.innerHTML = "~x";
+                break;
+            case (dirtyHpCount < 60):
+                cleanLeft.innerHTML = "X~";
+                cleanRight.innerHTML = "~X";
+                break;
+            case (dirtyHpCount < 80):
+                cleanLeft.innerHTML = "XX~~";
+                cleanRight.innerHTML = "~~XX";
+                break;
         }
 		
 	}
