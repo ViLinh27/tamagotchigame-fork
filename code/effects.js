@@ -12,7 +12,11 @@ const dirtyBtn = document.querySelector("#action-dirty");
 
 const startBtn = document.querySelector("#action-menu-start-game");
 const settingsBtn = document.querySelector("#action-menu-settings");
+const creditsBtn = document.querySelector("#action-menu-credits");
+
 const settingsBackBtn = document.querySelector("#action-settings-back");
+const creditsBackBtn = document.querySelector("#action-credits-back");
+
 const difHardBtn = document.querySelector("#action-settings-difficulty-hard");
 const difNormalBtn = document.querySelector("#action-settings-difficulty-normal");
 const difEasyBtn = document.querySelector("#action-settings-difficulty-easy");
@@ -112,6 +116,10 @@ startBtn.addEventListener("click", function() {
 settingsBtn.addEventListener("click", function() {
 	settingsMenu();
 });
+creditsBtn.addEventListener("click",function(){
+    creditsMenu();
+});
+
 
 difHardBtn.addEventListener("click", function() {
 	day = 5;
@@ -130,6 +138,9 @@ difEasyBtn.addEventListener("click", function() {
 
 settingsBackBtn.addEventListener("click", function() {
 	MainMenu();
+});
+creditsBackBtn.addEventListener("click",function(){
+    MainMenuFromCredits();
 });
 
 nightModeOffBtn.addEventListener("click", function() {
@@ -167,15 +178,26 @@ function nightModeOff() {
 //Togglers for buttons
 document.querySelector(".game-screen").classList.toggle("hide");
 document.querySelector(".menu-screen-settings").classList.toggle("hide");
+document.querySelector(".menu-screen-credits").classList.toggle("hide");
 
 function MainMenu() {
 	document.querySelector(".menu-screen-settings").classList.toggle("hide");
 	document.querySelector(".main-menu-screen").classList.toggle("hide");
 }
 
+function MainMenuFromCredits() {
+    document.querySelector(".menu-screen-credits").classList.toggle("hide");
+    document.querySelector(".main-menu-screen").classList.toggle("hide");
+}
+
 function settingsMenu() {
 	document.querySelector(".main-menu-screen").classList.toggle("hide");
 	document.querySelector(".menu-screen-settings").classList.toggle("hide");
+}
+
+function creditsMenu(){
+    document.querySelector(".main-menu-screen").classList.toggle("hide");
+    document.querySelector(".menu-screen-credits").classList.toggle("hide");
 }
 
 function startGame() {
