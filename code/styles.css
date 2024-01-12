@@ -168,6 +168,18 @@ h3 {
   font-size: 30px;
   width: 100%;
   text-align: center;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items:center;
+  align-content: stretch;
+}
+
+.hp-score{
+    margin-top:8vh;
+    font-family:'DM Mono', monospace;
+    font-weight: 400;
+    font-size: 40px;
 }
 
 .hp span {
