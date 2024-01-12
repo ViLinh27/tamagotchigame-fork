@@ -207,8 +207,8 @@ function startGame() {
 		scoreBar.innerHTML = score;
 
 		//Death ability
-		if ((playHpCount <= 0) || (sleepHpCount <= 0) || (hungerHpCount <= 0)) {
-			playHpCount = 0;
+		if ((dirtyCount >=95) || (playHpCount <= 0) || (sleepHpCount <= 0) || (hungerHpCount <= 0)) {
+			playHpCouknt = 0;
 			sleepHpCount = 0;
 			hungerHpCount = 0;
 			clearInterval(coreUpdate);
