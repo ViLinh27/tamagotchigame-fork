@@ -4,9 +4,9 @@ var i = 0;
 var titletxt = 'Tamagotchi (version 1.4)';
 var txtspeed = 50;/*in milliseconds */
 
-//hidden button variables
-var menuFromGameBtn = document.getElementById("#action-game-mainmenu");
-var playAgainBtn = document.getElementById("#action-game-playagain");
+//hidden button 
+const menuFromGameConst = document.querySelector("#action-game-mainmenu");
+const playAgainConst = document.querySelector("#action-game-playagain");
 
 //Constants for buttons
 const sleepBtn = document.querySelector("#action-sleep");
@@ -124,7 +124,6 @@ creditsBtn.addEventListener("click",function(){
     creditsMenu();
 });
 
-
 difHardBtn.addEventListener("click", function() {
 	day = 5;
 	document.querySelector("#difSet").innerHTML = "Hard";
@@ -143,10 +142,21 @@ difEasyBtn.addEventListener("click", function() {
 settingsBackBtn.addEventListener("click", function() {
 	MainMenu();
 });
+
+//credits
 creditsBackBtn.addEventListener("click",function(){
     MainMenuFromCredits();
 });
 
+menuFromGameConst.addEventListener("click",function(){
+   
+});
+
+playAgainConst.addEventListener("click",function(){
+
+});
+
+//night mode controllers
 nightModeOffBtn.addEventListener("click", function() {
 	nightModeOff();
 });
@@ -205,17 +215,21 @@ function creditsMenu(){
     document.querySelector(".menu-screen-credits").classList.toggle("hide");
 }
 
-function startGame() {
-	document.querySelector(".game-screen").classList.toggle("hide");
-	document.querySelector(".main-menu-screen").classList.toggle("hide");
-
-	//Tamagotchi's name
-	var tamagotchiName = prompt("Please, enter a name of your tamagotchi:", "");
+function TamaName(){
+    var tamagotchiName = prompt("Please, enter a name of your tamagotchi:", "");
 	document.querySelector("#name").innerHTML = tamagotchiName;
 	if (tamagotchiName == null || tamagotchiName.replace(/\s/g, '') == "") {
 		tamagotchiName = "Tamagotchi";
 		document.querySelector("#name").innerHTML = tamagotchiName;
 	}
+}
+
+function startGame() {
+	document.querySelector(".game-screen").classList.toggle("hide");
+	document.querySelector(".main-menu-screen").classList.toggle("hide");
+
+	//Tamagotchi's name
+	TamaName();
 
 	//Start game
 	core();
