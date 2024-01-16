@@ -4,6 +4,10 @@ var i = 0;
 var titletxt = 'Tamagotchi (version 1.4)';
 var txtspeed = 50;/*in milliseconds */
 
+//hidden button variables
+var menuFromGameBtn = document.getElementById("#action-game-mainmenu");
+var playAgainBtn = document.getElementById("#action-game-playagain");
+
 //Constants for buttons
 const sleepBtn = document.querySelector("#action-sleep");
 const feedBtn = document.querySelector("#action-feed");
@@ -179,6 +183,7 @@ function nightModeOff() {
 document.querySelector(".game-screen").classList.toggle("hide");
 document.querySelector(".menu-screen-settings").classList.toggle("hide");
 document.querySelector(".menu-screen-credits").classList.toggle("hide");
+document.querySelector(".hidden-buttons").classList.toggle("hide");
 
 function MainMenu() {
 	document.querySelector(".menu-screen-settings").classList.toggle("hide");
@@ -234,7 +239,9 @@ function startGame() {
 			sleepHpCount = 0;
 			hungerHpCount = 0;
 			clearInterval(coreUpdate);
+            
 			alert('Your score: ' + score + '\n ╭(×_×)╮');
+            document.querySelector(".hidden-buttons").classList.toggle("hide");
 		}
 
 		//Max health percentage (real)

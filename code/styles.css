@@ -137,7 +137,7 @@ h3 {
   font-weight: 500;
 }
 
-.buttons a, .menu-buttons a {
+.buttons a, .menu-buttons a ,.hidden-buttons a{
   display: inline-block;
   font-size: 40px;
   background-color: transparent;
@@ -152,7 +152,7 @@ h3 {
   transition: background-color .1s, color .1s;
 }
 
-.buttons a:hover, .menu-buttons a:hover {
+.buttons a:hover, .menu-buttons a:hover ,.hidden-buttons a:hover{
   background-color: #131313;
   color: #fafafa;
 }
@@ -161,6 +161,10 @@ h3 {
   width: 100%;
   text-align: center;
 }
+
+/*#action-game-mainmenu, #action-game-playagain{
+  display: none;
+}*/
 
 .hp {
   font-family: 'DM Mono', monospace;
