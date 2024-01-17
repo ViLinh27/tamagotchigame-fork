@@ -26,6 +26,11 @@ const difNormalBtn = document.querySelector("#action-settings-difficulty-normal"
 const difEasyBtn = document.querySelector("#action-settings-difficulty-easy");
 const nightModeOffBtn = document.querySelector("#nightmode-off");
 const nightModeOnBtn = document.querySelector("#nightmode-on");
+
+const musicModeOffBtn = document.querySelector("#music-off");
+const musicModeOnBtn = document.querySelector("#music-on");
+//var bgmusicaudio = document.getElementById("bgmusicaudio");
+
 //
 //Constants for main bar
 const sleepHp = document.querySelector("#sleep-hp");
@@ -165,6 +170,14 @@ nightModeOnBtn.addEventListener("click", function() {
 	nightModeOn();
 });
 
+//music controlers
+musicModeOffBtn.addEventListener("click", function(){
+    musicOff();
+});
+musicModeOnBtn.addEventListener("click", function(){
+    musicOn();
+});
+
 //title text animation
 document.addEventListener('DOMContentLoaded',function(){
     typeWriter();
@@ -187,6 +200,17 @@ function nightModeOn() {
 function nightModeOff() {
 	document.querySelector('body').classList.remove("nightmode-on");
 	document.querySelector('#nightmode').innerHTML = "off";
+}
+
+//music toggle
+function musicOn() {
+    document.querySelector('#music-setting').innerHTML = "on";
+    document.querySelector('audio').play();
+}
+
+function musicOff() {
+    document.querySelector('#music-setting').innerHTML = "off";
+    document.querySelector('audio').pause();
 }
 
 //Togglers for buttons
