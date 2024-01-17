@@ -205,12 +205,12 @@ function nightModeOff() {
 //music toggle
 function musicOn() {
     document.querySelector('#music-setting').innerHTML = "on";
-    document.querySelector('audio').play();
+    document.querySelector('#bgmusicaudio').play();
 }
 
 function musicOff() {
     document.querySelector('#music-setting').innerHTML = "off";
-    document.querySelector('audio').pause();
+    document.querySelector('#bgmusicaudio').pause();
 }
 
 //Togglers for buttons
