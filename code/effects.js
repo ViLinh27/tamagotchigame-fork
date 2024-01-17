@@ -29,7 +29,9 @@ const nightModeOnBtn = document.querySelector("#nightmode-on");
 
 const musicModeOffBtn = document.querySelector("#music-off");
 const musicModeOnBtn = document.querySelector("#music-on");
-//var bgmusicaudio = document.getElementById("bgmusicaudio");
+//button sound effect
+const btnAudio = new Audio("https://www.fesliyanstudios.com/play-mp3/2881");
+const allBtns= document.querySelectorAll("a");
 
 //
 //Constants for main bar
@@ -168,6 +170,10 @@ nightModeOffBtn.addEventListener("click", function() {
 
 nightModeOnBtn.addEventListener("click", function() {
 	nightModeOn();
+});
+allBtns.forEach(button=>{button.addEventListener("click", ()=>{
+        btnAudio.play();
+    });
 });
 
 //music controlers
