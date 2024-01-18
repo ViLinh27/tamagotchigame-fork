@@ -45,7 +45,7 @@ h3 {
 .menu h1{
     font-size:60px;
 }
-.menu h3{
+.menu h3, .settings h3{
     font-size:50px;
 }
 .menu-buttons{
@@ -64,6 +64,10 @@ h3 {
   transform: translateY(-50%);
   width: 100%;
   text-align: center;
+}
+
+.settings h2{
+  font-size: 55px;
 }
 
 .settings-buttons a,.credits-buttons a {
