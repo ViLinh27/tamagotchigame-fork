@@ -171,10 +171,6 @@ nightModeOffBtn.addEventListener("click", function() {
 nightModeOnBtn.addEventListener("click", function() {
 	nightModeOn();
 });
-allBtns.forEach(button=>{button.addEventListener("click", ()=>{
-        btnAudio.play();
-    });
-});
 
 //music controlers
 musicModeOffBtn.addEventListener("click", function(){
@@ -183,6 +179,8 @@ musicModeOffBtn.addEventListener("click", function(){
 musicModeOnBtn.addEventListener("click", function(){
     musicOn();
 });
+
+SoundOn();
 
 //title text animation
 document.addEventListener('DOMContentLoaded',function(){
@@ -252,6 +250,13 @@ function TamaName(){
 		tamagotchiName = "Tamagotchi";
 		document.querySelector("#name").innerHTML = tamagotchiName;
 	}
+}
+
+function SoundOn(){
+    allBtns.forEach(button=>{button.addEventListener("click", ()=>{
+        btnAudio.play();
+    });
+});
 }
 
 function startGame() {
