@@ -32,6 +32,8 @@ const musicModeOnBtn = document.querySelector("#music-on");
 //button sound effect
 const btnAudio = new Audio("https://www.fesliyanstudios.com/play-mp3/2881");
 const allBtns= document.querySelectorAll("a");
+const soundOnBtn = document.querySelector("#sound-on");
+const soundOffBtn = document.querySelector("#sound-off");
 
 //
 //Constants for main bar
@@ -180,7 +182,13 @@ musicModeOnBtn.addEventListener("click", function(){
     musicOn();
 });
 
-SoundOn();
+soundOnBtn.addEventListener("click",function(){
+    SoundOn();
+});
+
+soundOffBtn.addEventListener("click",function(){
+    SoundOff();
+});
 
 //title text animation
 document.addEventListener('DOMContentLoaded',function(){
@@ -253,15 +261,25 @@ function TamaName(){
 }
 
 function SoundOn(){
+    document.querySelector("#sound-setting").innerHTML = "on";
     allBtns.forEach(button=>{button.addEventListener("click", ()=>{
         btnAudio.play();
+        });
     });
-});
+}
+
+function SoundOff(){
+    document.querySelector("#sound-setting").innerHTML = "off";
+    allBtns.forEach(button=>{button.addEventListener("click", ()=>{
+        btnAudio.pause();
+        });
+    });
 }
 
 function startGame() {
 	document.querySelector(".game-screen").classList.toggle("hide");
 	document.querySelector(".main-menu-screen").classList.toggle("hide");
+    SoundOn();
 
 	//Tamagotchi's name
 	TamaName();
