@@ -25,6 +25,10 @@ h3 {
   font-weight: 300;
 }
 
+p {
+  font-size: 25px;
+}
+
 .hide {
   display: none;
 }
