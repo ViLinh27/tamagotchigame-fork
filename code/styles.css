@@ -133,6 +133,9 @@ p {
   font-family: 'Arial', sans-serif;
   font-size: 70px;
 }
+#tbody-main{
+  width:150px;
+}
 
 #name {
   display: inline-block;

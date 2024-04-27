@@ -55,6 +55,15 @@ const mouth = document.querySelector("#mouth");
 const cleanLeft = document.querySelector("#clean-left");
 const cleanRight = document.querySelector("#clean-right");
 
+var tbody = document.querySelector("#tbody-main");
+const thappy01 = "/assets/pictures/tama-happy_01.png";
+const thappy02 = "/assets/pictures/tama-happy_02.png";
+const thappy03 = "/assets/pictures/tama-happyish_03.png";
+const thappy04 = "/assets/pictures/tama-happymid_04.png";
+const tmid05 = "/assets/pictures/tama-mid_05.png";
+const tmidsad06 = "/assets/pictures/tama-midsad_06.png";
+const tsad07 = "/assets/pictures/tama-sad_07.png";
+const tdead = "/assets/pictures/tama-sadDead_08.png";
 //
 //Game settings
 const maxSleep = 300;
@@ -353,22 +362,28 @@ function startGame() {
 		/*mouth}*/
         switch(true){
             case hungerHpCount <= 0:
-                mouth.innerHTML = "_";
+                // mouth.innerHTML = "_";
+                tbody.src = tdead;
                 break;
             case hungerHpCount < 20:
-                mouth.innerHTML = "0";
+                // mouth.innerHTML = "0";
+                tbody.src = tsad07;
                 break;
             case hungerHpCount < 40:
-                mouth.innerHTML = "O";
+                // mouth.innerHTML = "O";
+                tbody.src = tmidsad06;
                 break;
             case hungerHpCount < 60:
-                mouth.innerHTML = "o";
+                // mouth.innerHTML = "o";
+                tbody.src = tmid04;
                 break;
             case hungerHpCount < 80:
-                mouth.innerHTML = "-";
+                // mouth.innerHTML = "-";
+                tbody.src = thappy02;
                 break;
             case hungerHpCount > 80:
-                mouth.innerHTML = "▿";
+                // mouth.innerHTML = "▿";
+                tbody.src = thappy01;
                 break;
         }
 
@@ -376,34 +391,40 @@ function startGame() {
 
         switch(true){
             case (sleepHpCount <= 0): 
-                eyeLeft.innerHTML = "×";
-                eyeRight.innerHTML = "×";
+                // eyeLeft.innerHTML = "×";
+                // eyeRight.innerHTML = "×";
+                // tbody.src = tdead;
                 break;
             
             case (sleepHpCount < 20): 
-                eyeLeft.innerHTML = "◡";
-                eyeRight.innerHTML = "◡";
-                mouth.innerHTML = ".";
+                // eyeLeft.innerHTML = "◡";
+                // eyeRight.innerHTML = "◡";
+                // mouth.innerHTML = ".";
+                // tbody.src = tmid05;
                 break;
 
             case (sleepHpCount < 40): 
-                eyeLeft.innerHTML = " ´ ";
-                eyeRight.innerHTML = " ` ";
+                // eyeLeft.innerHTML = " ´ ";
+                // eyeRight.innerHTML = " ` ";
+                // tbody.src = thappy04;
                 break;
 
             case (sleepHpCount < 60):
-                eyeLeft.innerHTML = "●";
-                eyeRight.innerHTML = "●";
+                // eyeLeft.innerHTML = "●";
+                // eyeRight.innerHTML = "●";
+                // tbody.src = thappy03;
                 break;
 
             case (sleepHpCount < 80): 
-                eyeLeft.innerHTML = "・";
-                eyeRight.innerHTML = "・";
+                // eyeLeft.innerHTML = "・";
+                // eyeRight.innerHTML = "・";
+                // tbody.src = thappy02
                 break;
             
             case (sleepHpCount > 80): 
-                eyeLeft.innerHTML = "＾";
-                eyeRight.innerHTML = "＾";
+                // eyeLeft.innerHTML = "＾";
+                // eyeRight.innerHTML = "＾";
+                // tbody.src = thappy01;
                 break;
         }
 		
@@ -413,43 +434,43 @@ function startGame() {
             case (playHpCount <= 0): 
 			effectRight.innerHTML = "   ";
 			effectLeft.innerHTML = "   ";
-			handRight.innerHTML = "╮";
-			handLeft.innerHTML = "╭";
+			// handRight.innerHTML = "╮";
+			// handLeft.innerHTML = "╭";
             break;
 
             case (playHpCount < 40): 
                 effectRight.innerHTML = "*  ";
                 effectLeft.innerHTML = "   ";
-                handRight.innerHTML = " ";
-                handLeft.innerHTML = " ";
+                // handRight.innerHTML = " ";
+                // handLeft.innerHTML = " ";
                 break;
             
             case (playHpCount < 60): 
                 effectLeft.innerHTML = "   ";
                 effectRight.innerHTML = "   ";
-                handRight.innerHTML = "╮";
-                handLeft.innerHTML = "╭";
+                // handRight.innerHTML = "╮";
+                // handLeft.innerHTML = "╭";
                 break;
             
             case (playHpCount < 80): 
                 effectLeft.innerHTML = "  ✧";
                 effectRight.innerHTML = "✧  ";
-                handRight.innerHTML = "╭";
-                handLeft.innerHTML = "╮";
+                // handRight.innerHTML = "╭";
+                // handLeft.innerHTML = "╮";
                 break;
             
             case (playHpCount < 90): 
                 effectLeft.innerHTML = " ˖✧";
                 effectRight.innerHTML = "✧˖ ";
-                handRight.innerHTML = "/";
-                handLeft.innerHTML = "\\";
+                // handRight.innerHTML = "/";
+                // handLeft.innerHTML = "\\";
                 break;
             
             case (playHpCount > 90): 
                 effectLeft.innerHTML = "°˖✧";
                 effectRight.innerHTML = "✧˖°";
-                handRight.innerHTML = "◜";
-                handLeft.innerHTML = "◝";
+                // handRight.innerHTML = "◜";
+                // handLeft.innerHTML = "◝";
                 break;
             
         }
